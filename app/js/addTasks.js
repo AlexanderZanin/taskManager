@@ -28,7 +28,7 @@
 
 		taskTemplate.innerHTML = createTask(taskName, taskStatus);
 
-		tasksList.appendChild(taskTemplate);
+		if (tasksList) {tasksList.appendChild(taskTemplate);}
 
 		taskTemplate.addEventListener('click', function(e) {
 			taskManager.changeStatus(e, INITIAL_TASKS);

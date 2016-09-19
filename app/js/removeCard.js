@@ -17,11 +17,13 @@
 
 		data.splice(activeIndex, 1);
 
+
 		cardTasks = JSON.parse(localStorage.getItem('tasks'));
 
 		cardTasks = cardTasks.filter(function(obj) {
 			return obj.parentId !== +parentId;
 		});
+
 
 
 		localStorage.setItem('cards', JSON.stringify(data));
