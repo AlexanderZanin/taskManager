@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Test Task</title>
+	<link rel="stylesheet" href="css/all.css">
+</head>
+<body>
+<div class="wrapper">
+	<header class="header">
+		<strong class="header__logo">
+			<a href="#">Task Manager</a>
+		</strong>
+	</header>
+	<main class="content">
+		<h3>You can drag and drop internal tasks between parent cards.</h3>
+		<div id="board" class="board">
+			<!--<div class="todo-item">-->
+				<!--<div class="todo-item__head">-->
+					<!--<span class="todo-item__title">asdasd</span>-->
+					<!--<textarea class="todo-item__edit-name">asdasd</textarea>-->
+				<!--</div>-->
+				<!--<div class="todo-item__tasks-list">-->
+
+				<!--</div>-->
+				<!--<div class="todo-item__adding-task">-->
+					<!--<textarea class="todo-item__new-task"></textarea>-->
+					<!--<div class="controls">-->
+						<!--<input class="controls__save" type="submit" value="Сохранить">-->
+						<!--<span class="controls__close">close</span>-->
+					<!--</div>-->
+				<!--</div>-->
+				<!--<a href="#" class="todo-item__add">Добавить...</a>-->
+			<!--</div>-->
+			<!--<div class="todo-item item">
+				<div class="todo-item__head">
+					<span class="todo-item__title">asdasd</span>
+					<textarea class="todo-item__edit-name">asdasd</textarea>
+				</div>
+				<div class="todo-item__tasks-list">
+					<div class="todo-item__task"></div>
+				</div>
+				<div class="todo-item__adding-task">
+					<textarea class="todo-item__new-task"></textarea>
+					<div class="controls">
+						<input class="controls__save" type="submit" value="Сохранить">
+						<span class="controls__close">close</span>
+					</div>
+				</div>
+				<a href="#" class="todo-item__add">Добавить...</a>
+			</div>-->
+
+			<form class="add-item">
+				<input class="add-item__name" type="text" placeholder="Add list...">
+				<div class="controls">
+					<input class="add-item__submit" type="submit" value="Save">
+				</div>
+			</form>
+		</div>
+	</main>
+</div>
+<div id="state-popup" class="state-popup popup">
+	<div class="l-popup-holder">
+		<span class="popup__close">✕</span>
+		<span class="popup__title">Choose state:</span>
+		<div class="state-popup__list">
+			<div class="task-state -incoming">incoming</div>
+			<div class="task-state -todo">to do</div>
+			<div class="task-state -in-progress">in progress</div>
+			<div class="task-state -done">done</div>
+		</div>
+	</div>
+</div>
+<div id="edit-popup" class="edit-popup popup">
+	<div class="l-popup-holder">
+		<span class="popup__close">✕</span>
+		<label class="popup__title">Edit task:</label>
+		<textarea class="edit-popup__edit"></textarea>
+		<input class="edit-popup__submit" type="submit" value="Save">
+	</div>
+</div>
+<script defer src="js/taskManager.js"></script>
+<script defer src="js/utils.js"></script>
+<script defer src="js/createCard.js"></script>
+<script defer src="js/removeCard.js"></script>
+<script defer src="js/editTitle.js"></script>
+<script defer src="js/changeStatus.js"></script>
+<script defer src="js/editTask.js"></script>
+<script defer src="js/addTasks.js"></script>
+<script defer src="js/dragndrop.js"></script>
+<script defer src="js/init.js"></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+// Default global colors
+
+$colorText: #4d4d4d;
+$colorLink: #666;
+$wrapBg: #fff;
+$bgBody: rgb(0, 121, 191);
+$inputBg: #3f6f21;
+$cardBg: #e2e4e6;
+
+
+// Widths
+$minWidth: 320px;
+$maxWidth: 1350px;
+
+// breakpoints
+
+$tablet: 980;
+$tabletSmall: 768;
+$mobile: 640;
+$mobileSmall: 480;
+
+
+// Fonts
+$family: 'PT Sans', Arial, Helvetica, sans-serif;
+$fw: 300;
+$fz: 16px;
+$lh: 1.2;
+
+
+// state colors
+
+$incoming: #33ba39;
+$todo: #ff6b81;
+$inProgress: #53b0ff;
+$done: #e382ff;

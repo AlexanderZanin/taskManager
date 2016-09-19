@@ -1,0 +1,18 @@
+@mixin anim($param: all, $dur: .15s, $type: ease-in-out, $delay: 0s) {
+	transition: $param $dur $type $delay;
+}
+
+@mixin anim-param($params...) {
+	transition-property: $params;
+}
+
+@mixin breakpoint($point, $type: max) {
+	@media screen and (#{$type}-width: #{$point}px) {@content;}
+}
+
+@mixin centeringXY {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}

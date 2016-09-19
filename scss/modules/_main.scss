@@ -1,0 +1,160 @@
+.board {
+	display: flex;
+	align-items: flex-start;
+	.todo-item + .todo-item, .todo-item +  .add-item {
+		margin: 0 0 0 10px;
+	}
+}
+
+.controls {
+	overflow: auto;
+	//display: none;
+	&__close {
+		font-size: 1.25rem;
+		cursor: pointer;
+		margin: 0 0 0 10px;
+		&:hover {
+			opacity: .7;
+		}
+	}
+}
+.add-item, .todo-item {
+	overflow: hidden;
+	width: 270px;
+	background: $cardBg;
+	border-radius: 5px;
+	flex-shrink: 0;
+}
+.add-item {
+	padding: 10px;
+	&__name {
+		width: 100%;
+		display: block;
+		background: rgba(0, 0, 0, .05);
+		border: 1px solid #aaa;
+		box-shadow: inset 0 1px 8px rgba(0, 0, 0, .15);
+		margin: 0 0 10px;
+	}
+}
+
+.todo-item {
+	.is-hidden {
+		display: none;
+	}
+	.is-editing {
+		display: block;
+	}
+	&__head {
+		padding: 10px;
+		display: flex;
+		justify-content: space-between;
+	}
+	&__remove {
+		cursor: pointer;
+		width: 13px;
+		&:hover {
+			color: #ff517b;
+		}
+	}
+	&__title {
+		padding: 2px 10px;
+		width: 90%;
+	}
+	&__title {
+		display: block;
+		cursor: pointer;
+		min-height: 20px;
+	}
+	&__edit-name {
+		display: none;
+		width: 90%;
+	}
+	&__tasks-list, &__adding-task {
+		padding: 7px 10px;
+	}
+	&__tasks-list {
+		will-change: transform;
+		&.is-highlighted {
+			background: #bbb;
+			box-shadow: 0 0 12px 0 rgba(0, 0, 0, .2);
+		}
+	}
+	&__task {
+		word-wrap: break-word;
+		cursor: grab;
+		background: #fafafa;
+		border-radius: 5px;
+		padding: 25px 10px 7px;
+		position: relative;
+		@include anim(box-shadow);
+		& + & {
+			margin: 7px 0 0;
+		}
+		&:hover {
+			background: transparentize(#fafafa, .4);
+		}
+		&:active {
+			cursor: grabbing;
+		}
+		&.is-dragging {
+			background: #fafafa;
+			width: 250px;
+			transform: rotate(5deg);
+			box-shadow: 0 0 5px 0 rgba(0, 0, 0, .3);
+		}
+		&.is-highlighted {
+			box-shadow: 0 0 25px 0 #0073ff;
+		}
+		.task-state {
+			position: absolute;
+			left: 7px;
+			top: 4px;
+		}
+	}
+	&__task-edit {
+		cursor: pointer;
+		font-size: .75rem;
+		position: absolute;
+		right: 7px;
+		top: 4px;
+		background: #ccc;
+		padding: 2px 5px;
+		border-radius: 3px;
+	}
+	&__adding-task {
+		display: none;
+		padding: 0 10px 8px;
+	}
+	&__add {
+		display: block;
+		padding: 8px 10px;
+		&:hover {
+			background: transparentize(#000, .9);
+			text-decoration: underline;
+			color: darken($colorLink, 15%);
+		}
+	}
+}
+
+.task-state {
+	padding: 2px 5px;
+	border-radius: 3px;
+	font-size: .75rem;
+	cursor: pointer;
+	color: #fff;
+	&:first-letter {
+		text-transform: uppercase;
+	}
+	&.-incoming {
+		background: $incoming;
+	}
+	&.-todo {
+		background: $todo;
+	}
+	&.-in-progress {
+		background: $inProgress;
+	}
+	&.-done {
+		background: $done;
+	}
+}

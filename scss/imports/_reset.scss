@@ -1,0 +1,42 @@
+*, *:before, *:after {box-sizing: border-box;}
+img {
+	vertical-align: top;
+	max-width: 100%;
+	height: auto;
+	border: 0;
+	-ms-interpolation-mode: bicubic;
+}
+form, fieldset {
+	margin: 0;
+	padding: 0;
+	border-style: none;
+}
+
+button,
+html input[type=button],
+input[type=submit] {
+	-webkit-appearance: button;
+	cursor: pointer;
+}
+input, textarea, button {
+	-webkit-appearance: none;
+	&:focus {outline: none;}
+}
+input, textarea {
+	border: none;
+	outline: none;
+}
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+	padding:0;
+	border:0;
+}
+main, article ,aside , details, figcaption, figure, footer, header, menu, nav, section {
+	display: block;
+}
+ul, ol, menu {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+body, figure, p {margin: 0;}

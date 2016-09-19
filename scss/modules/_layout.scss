@@ -1,0 +1,22 @@
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+.header {
+	padding: 10px 20px;
+	text-align: center;
+	background: transparentize(#000, .7);
+	&__logo a {
+		color: transparentize(#fff, .2);
+		&:hover {
+			color: #fff;
+			@include anim(color);
+		}
+	}
+}
+.content {
+	flex-grow: 1;
+	padding: 10px 20px 20px;
+	overflow: auto;
+}
