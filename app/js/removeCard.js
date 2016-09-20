@@ -1,7 +1,9 @@
 (function () {
 
 	var cardTasks;
+
 	function removeCard(e, data) {
+		//removing card
 		if (!e.target.classList.contains('todo-item__remove')) return;
 
 		e.target.closest('.todo-item').remove();
@@ -18,6 +20,7 @@
 		localStorage.setItem('cards', JSON.stringify(data));
 
 
+		//removing tasks
 		cardTasks = JSON.parse(localStorage.getItem('tasks'));
 
 		if (!cardTasks) return;
