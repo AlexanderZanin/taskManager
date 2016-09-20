@@ -57,7 +57,10 @@
 		var activeObj = params.data.find(function(obj) {
 			return obj.id === +parendId;
 		});
-		activeObj.name = params.newValue;
+
+		if (activeObj) {
+			activeObj.name = params.newValue;
+		}
 
 		localStorage.setItem(params.storageItem, JSON.stringify(params.data));
 	}

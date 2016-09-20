@@ -1,7 +1,6 @@
 (function () {
 
 	var cardTasks;
-
 	function removeCard(e, data) {
 		if (!e.target.classList.contains('todo-item__remove')) return;
 
@@ -16,18 +15,22 @@
 		});
 
 		data.splice(activeIndex, 1);
+		localStorage.setItem('cards', JSON.stringify(data));
 
 
 		cardTasks = JSON.parse(localStorage.getItem('tasks'));
+
+		if (!cardTasks) return;
 
 		cardTasks = cardTasks.filter(function(obj) {
 			return obj.parentId !== +parentId;
 		});
 
-
-
-		localStorage.setItem('cards', JSON.stringify(data));
-		localStorage.setItem('tasks', JSON.stringify(cardTasks));
+		if (data.length) {
+			localStorage.setItem('tasks', JSON.stringify(cardTasks));
+		} else  {
+			localStorage.setItem('tasks', JSON.stringify([]));
+		}
 	}
 
 
